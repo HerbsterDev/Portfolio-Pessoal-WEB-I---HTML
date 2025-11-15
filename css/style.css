@@ -1,0 +1,285 @@
+/* ----- geral ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis de Cor para fácil customização */
+:root {
+  --bg-dark: #1a1c20;
+  --bg-light: #2c2f36;
+  --text-light: #F0F4F8;
+  --text-muted: #A0AEC0;
+  --accent: #00A9FF; /* Azul vibrante */
+  --accent-dark: #0077B6; /* Azul mais escuro */
+  --border-color: #4A5568; /* Cinza para bordas */
+}
+
+body {
+  /* Fonte sans-serif moderna */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-muted); /* Cor de texto padrão mais suave */
+  line-height: 1.6;
+}
+
+/* Transições suaves para interações */
+a, .card, #fotoPrincipal, button, input, textarea, tr {
+  transition: all 0.3s ease;
+}
+
+/* ----- cabeçalho ----- */
+header {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  text-align: center;
+  padding: 24px 20px;
+  border-bottom: 1px solid var(--border-color); /* Borda sutil */
+}
+
+header h1 {
+  margin-bottom: 16px;
+  font-size: 28px;
+  color: var(--text-light);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px; /* Mais espaçamento */
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 8px 16px;
+  font-weight: 500;
+  border-radius: 8px; /* Bordas arredondadas */
+}
+
+nav a:hover {
+  background-color: var(--accent);
+  color: var(--bg-dark); /* Contraste no hover */
+}
+
+/* ----- conteudo ----- */
+main {
+  padding: 30px 20px;
+  max-width: 960px; /* Limita a largura para melhor leitura */
+  margin: 0 auto;
+}
+
+.secao {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+h2 {
+  color: var(--accent); /* Títulos com a cor de destaque */
+  margin-bottom: 20px;
+  border-bottom: none; /* Remove a borda antiga */
+  display: inline-block;
+  padding-bottom: 5px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+p {
+  color: var(--text-light); /* Parágrafos com cor mais clara */
+  margin-bottom: 10px;
+  max-width: 700px; /* Limita largura do texto */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ----- sobre ----- */
+#fotoPrincipal {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Foto de perfil circular */
+  border: 4px solid var(--accent-dark); /* Borda na cor de destaque */
+  object-fit: cover;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 15px rgba(0, 169, 255, 0.1); /* Sombra sutil */
+}
+
+#fotoPrincipal:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 169, 255, 0.2);
+}
+
+#sobre figcaption {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+#sobre p {
+  text-align: left; /* Texto de parágrafo alinhado à esquerda */
+}
+
+/* ----- projetos ----- */
+.projetos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.card {
+  background-color: var(--bg-light);
+  border: 1px solid var(--border-color); /* Borda moderna e sutil */
+  border-radius: 12px; /* Mais arredondado */
+  padding: 20px;
+  width: 250px;
+  text-align: left; /* Texto do card alinhado à esquerda */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Efeito de elevação */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  border-color: var(--accent-dark);
+}
+
+/* O H2 dentro do card */
+.card h2 {
+  color: var(--accent);
+  font-size: 18px;
+  margin-bottom: 10px;
+  border: none; /* Remove estilo global de h2 */
+  padding: 0;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+
+/* ----- habilidades ----- */
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px; /* Bordas arredondadas na tabela */
+  overflow: hidden; /* Garante que o radius funcione */
+}
+
+th, td {
+  border: none; /* Remove bordas antigas */
+  border-bottom: 1px solid var(--border-color); /* Apenas linhas horizontais */
+  padding: 12px 15px;
+  text-align: left; /* Alinhamento profissional */
+}
+
+th {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+tr:last-child td {
+  border-bottom: none; /* Remove borda da última linha */
+}
+
+tr:hover {
+  background-color: #3a3d44; /* Destaque sutil no hover da linha */
+}
+
+/* Destaca a coluna 'Nível' */
+td:nth-child(2) {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ----- formulario ----- */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+  background-color: var(--bg-light);
+  padding: 25px 30px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color); /* Borda sutil */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+/* Efeito de foco moderno */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 169, 255, 0.2);
+}
+
+button {
+  background-color: var(--accent);
+  color: var(--bg-dark); /* Texto escuro para contraste */
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background-color: var(--accent-dark);
+  color: var(--text-light);
+  transform: scale(1.02);
+}
+
+/* ----- rodape ----- */
+footer {
+  background-color: var(--bg-light);
+  color: var(--text-muted);
+  text-align: center;
+  padding: 25px 20px;
+  margin-top: 40px;
+  font-size: 14px;
+  border-top: 1px solid var(--border-color);
+}
+
+footer p {
+  margin-bottom: 8px;
+  color: var(--text-muted);
+}
+
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
